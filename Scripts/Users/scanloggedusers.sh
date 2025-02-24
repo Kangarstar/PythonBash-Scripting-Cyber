@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Log file path
-LOG_FILE="/workspace/logs/loggeduserssh.log"
+LOG_FILE="/home/log/loggeduserssh.log"
 
 #root check
 if [ "$(id -u)" != "0" ]; then
