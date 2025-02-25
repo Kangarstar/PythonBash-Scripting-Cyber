@@ -19,27 +19,26 @@ format_date() {
 }
 
 # Log file path
-LOG_FILE="/home/log/network_scan_$(format_date).log"
+LOG_FILE="/home/log/network_scan.sh_$(format_date).log"
 
 # check log directyory exists
 mkdir -p "$(dirname "$LOG_FILE")"
 
 # Define the target IP address or hostname
 TARGET="127.0.0.1"
-
+{
 # Write to log with time stamp
-echo -e "${YELLOW}=== Network Scan Report ===${NC}" | tee "$LOG_FILE"
-# echo -e "Date: $(format_date)" | tee -a "$LOG_FILE"
-echo -e "" | tee -a "$LOG_FILE" 
-echo -e "${GREEN}=== Full Port Scan with Service Detection ===${NC}" | tee -a "$LOG_FILE"
-nmap -p- -sV -sC -A -T4 $TARGET | tee -a "$LOG_FILE"
-echo -e "" | tee -a "$LOG_FILE"
-echo -e "${GREEN}=== Additional UDP Scan ===${NC}" | tee "$LOG_FILE"
-nmap -sU -T4 $TARGET | tee -a "$LOG_FILE"
-echo -e "" | tee -a "$LOG_FILE"
-
-echo -e "${YELLOW}=== Network Scan Complete ===${NC}" | tee -a "$LOG_FILE"
-echo "Log saved to: $LOG_FILE" | tee -a "$LOG_FILE"
+echo -e "${YELLOW}=== Network Scan Report ===${NC}"
+echo -e ""  
+echo -e "${GREEN}=== Full Port Scan with Service Detection ===${NC}" 
+nmap -p- -sV -sC -A -T4 $TARGET 
+echo -e "" 
+echo -e "${GREEN}=== Additional UDP Scan ===${NC}"
+nmap -sU -T4 $TARGET 
+echo -e "" 
+echo -e "${YELLOW}=== Network Scan Complete ===${NC}" 
+echo "Log saved to: $LOG_FILE" 
+} | tee -a "$LOG_FILE"
 
 # Set appropriate permissions
 chmod 600 "$LOG_FILE"

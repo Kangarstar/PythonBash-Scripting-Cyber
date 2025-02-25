@@ -1,8 +1,5 @@
 #!/bin/bash
 
-#Log file path
-LOG_FILE="/home/log/loggeduserssh.log"
-
 #root check
 if [ "$(id -u)" != "0" ]; then
     echo "This script must be run as root"
@@ -13,6 +10,10 @@ fi
 format_date() {
     date "+%d-%m-%Y %H:%M:%S"
 }
+
+#Log file path
+LOG_FILE="/home/log/user_check.sh_$(format_date).log"
+
 
 #check log directyory exists
 mkdir -p "$(dirname "$LOG_FILE")"

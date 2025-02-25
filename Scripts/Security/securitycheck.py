@@ -5,9 +5,6 @@ import subprocess
 import datetime
 from pathlib import Path
 
-import time
-from tqdm import tqdm
-
 # Colors for terminal output
 class Colors:
     RED = '\033[0;31m'
@@ -18,7 +15,7 @@ class Colors:
 # Log file path
 LOG_DIR = "/home/log"
 timestamp = datetime.datetime.now().strftime("%d-%m-%Y_%H:%M:%S")
-LOG_FILE = f"{LOG_DIR}/security_check_{timestamp}.log"
+LOG_FILE = f"{LOG_DIR}/security_check.py_{timestamp}.log"
 
 def run_command(command):
     """Execute a shell command and return its output"""
@@ -112,20 +109,12 @@ def main():
         }
     ]
 
-    # Run all checks
-    # for check in checks:
-    #     write_to_log(f"\n{check['title']}:", Colors.GREEN)
-    #     result = run_command(check['command'])
-    #     write_to_log(result)
-        
-            # Run all checks with progress bar
-    print("\nRunning security checks...")
-    for check in tqdm(checks, desc="Progress", unit="check"):
+    #Run all checks
+    for check in checks:
         write_to_log(f"\n{check['title']}:", Colors.GREEN)
         result = run_command(check['command'])
         write_to_log(result)
-        time.sleep(0.1)  # Optional: add small delay to make progress visible
-
+        
     # Complete
     write_to_log("\n=== Security Check Complete ===", Colors.YELLOW)
     write_to_log(f"Log saved to: {LOG_FILE}")
