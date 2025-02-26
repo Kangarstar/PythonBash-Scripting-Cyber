@@ -43,20 +43,20 @@ sudo apt update && sudo apt install -y git curl nmap
 sudo pip install requests
 
 # Clonage du dépôt
-sudo git clone git@github.com:Kangarstar/DigiTP7-Scripting-Cyber.git /etc/
+sudo git clone git@github.com:Kangarstar/DigiTP7-Scripting-Cyber.git /etc/scripts
 
 # Attribution des permissions
 sudo chmod -R 700 /etc/scripts
 
 # Installation du crontab pour l'exécution automatique
-crontab /etc/scripts/DigiTP7-Scripting-Cyber/crontab
+crontab /etc/scripts/crontab
 
 ```
 ## Execution manuelle d'un script
 ```bash
 sudo /etc/scripts/security/securityaudit.sh
 # ou
-sudo /etc/scripts/DigiTP7-Scripting-Cyber/security/networkscan.py
+sudo /etc/scripts/scripts/network/networkscan.py
 ```
 
 **Tous les logs sont enregistrés dans le répertoire `/var/log/security/`.**

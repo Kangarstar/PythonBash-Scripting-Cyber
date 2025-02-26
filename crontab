@@ -1,6 +1,6 @@
-0 2 * * * /home/scripts/securitycheck.sh
-0 2 * * * /home/scripts/networkscan.sh
-0 2 * * * /home/scripts/usercheck.sh
-30 8 * * * /home/scripts/securitycheck.py
-30 8 * * * /home/scripts/networkscan.py
-30 8 * * * /home/scripts/usercheck.py
+0 2 * * * /etc/scripts/system/securityaudit.sh
+0 2 * * * /etc/scripts/network/networkscan.sh
+0 2 * * * /etc/scripts/users/usercheck.sh
+30 8 * * * /etc/scripts/system/securityaudit.py
+30 8 * * * /etc/scripts/network/networkscan.py
+30 8 * * * /etc/scripts/users/usercheck.py

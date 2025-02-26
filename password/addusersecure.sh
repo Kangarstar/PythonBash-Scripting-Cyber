@@ -125,10 +125,10 @@ else
         # Ajout de l'utilisateur
         # Créer l'utilisateur avec un répertoire home par défaut
         echo -e "${YELLOW}Creating user account...${NC}"
-        sudo useradd -m "$username"
+        sudo /usr/sbin/useradd -m "$username"
 
         # Définir le mot de passe pour l'utilisateur
-        echo "$username:$password" | sudo chpasswd
+        echo "$username:$password" | sudo /usr/sbin/chpasswd
 
         # Afficher un message de confirmation
         echo -e "${GREEN}The user '$username' was successfully created.${NC}"
