@@ -2,7 +2,7 @@
 
 import os
 import subprocess
-import datetime
+from datetime import datetime
 from pathlib import Path
 
 # Define the target IP address or hostname
@@ -17,7 +17,7 @@ class Colors:
 
 # Log file path
 LOG_DIR = "/home/log"
-timestamp = datetime.datetime.now().strftime("%d-%m-%Y_%H:%M:%S")
+timestamp = datetime.now().strftime("%d-%m-%Y_%H:%M:%S")
 LOG_FILE = f"{LOG_DIR}/network_scan.py_{timestamp}.log"
 
 def run_command(command):
@@ -48,23 +48,23 @@ def main():
     Path(LOG_DIR).mkdir(parents=True, exist_ok=True)
     
     # Start logging
-    write_to_log("=== Netwok Scan Report ===")
+    write_to_log("=== Network Scan Report ===", Colors.YELLOW)
     write_to_log(f"Date: {timestamp}")
     write_to_log("")
 
     # Network scan
     scans = [
         {
-            "title" : "Full Port Scan with Service Detection",
+            "title" : "=== Full Port Scan with Service Detection ===",
             "command" : f"nmap -p- -sV -sC -A -T4 {TARGET}"
         },
         {
-            "title" : "Additional UDP Scan",
+            "title" : "=== Additional UDP Scan ===",
             "command" : f"nmap -sU -T4 {TARGET}"
         }
-        
+
     ]
-    
+
     # Run all checks
     for scan in scans:
         write_to_log(f"\n{scan['title']}:", Colors.GREEN)

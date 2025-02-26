@@ -8,7 +8,7 @@ fi
 
 #format date
 format_date() {
-    date "+%d-%m-%Y %H:%M:%S"
+    date "+%d-%m-%Y_%H:%M:%S"
 }
 
 #Log file path

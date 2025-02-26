@@ -2,7 +2,7 @@
 
 import os
 import subprocess
-import datetime
+from datetime import datetime
 from pathlib import Path
 
 # Colors for terminal output
@@ -12,9 +12,9 @@ class Colors:
     YELLOW = '\033[1;33m'
     NC = '\033[0m'  # No Color
 
-# Log file path
+# Log file path and date
+timestamp = datetime.now().strftime("%d-%m-%Y_%H:%M:%S")
 LOG_DIR = "/home/log"
-timestamp = datetime.datetime.now().strftime("%d-%m-%Y_%H:%M:%S")
 LOG_FILE = f"{LOG_DIR}/security_check.py_{timestamp}.log"
 
 def run_command(command):
