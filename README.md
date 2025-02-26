@@ -14,6 +14,7 @@ Le projet se compose de quatre catégories de scripts :
 - **Password** : Ils permettent de créer des utilisateurs avec des mots de passe sécurisés, conformes aux recommandations de la CNIL et absents des listes de mots de passe compromis.
 
 ## Structure du projet
+```
 DigiTP7-Scripting-Cyber
 └── scripts/
     ├── network/
@@ -29,8 +30,7 @@ DigiTP7-Scripting-Cyber
     │   ├── addusersecure.sh
     │   └── addusersecure.py
     └── crontab
-    
-
+```
 
 ## Installation
 
