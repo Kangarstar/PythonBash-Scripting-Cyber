@@ -37,28 +37,24 @@ DigiTP7-Scripting-Cyber
 Pour installer et configurer le projet, suivez les étapes ci-dessous :
 
 ```bash
-# Création du répertoire pour les scripts
-sudo mkdir -p /etc/scripts
-
-# Positionnement dans le répertoire
-cd /etc/scripts
 
 # Installation des dépendances
 sudo apt update && sudo apt install -y git curl nmap
 sudo pip install requests
 
 # Clonage du dépôt
-sudo git clone git@github.com:Kangarstar/DigiTP7-Scripting-Cyber.git
+sudo git clone git@github.com:Kangarstar/DigiTP7-Scripting-Cyber.git /etc/
 
 # Attribution des permissions
 sudo chmod -R 700 /etc/scripts
 
 # Installation du crontab pour l'exécution automatique
 crontab /etc/scripts/DigiTP7-Scripting-Cyber/crontab
+
 ```
 ## Execution manuelle d'un script
 ```bash
-sudo /etc/scripts/DigiTP7-Scripting-Cyber/security/securityaudit.sh
+sudo /etc/scripts/security/securityaudit.sh
 # ou
 sudo /etc/scripts/DigiTP7-Scripting-Cyber/security/networkscan.py
 ```

@@ -20,7 +20,7 @@ class Colors:
 timestamp = datetime.now().strftime("%d-%m-%Y_%H:%M:%S")
 LOG_DIR = "/var/log/security"
 LOG_FILE = f"{LOG_DIR}/adduser_secure_{timestamp}.log"
-ROCKYOU_DIR = "/home/wordlists"
+ROCKYOU_DIR = "/etc/scripts/wordlists"
 ROCKYOU_FILE = f"{ROCKYOU_DIR}/rockyou.txt"
 ROCKYOU_URL = "https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt"
 
@@ -133,14 +133,14 @@ def create_user(username, password):
     write_to_log(f"Creating user account...", Colors.GREEN)
     
     # Create user with home directory
-    result = run_command(f"useradd -m {username}")
+    result = run_command(f"/usr/sbin/useradd -m {username}")
     if "Error" in result:
         write_to_log(f"Failed to create user: {result}", Colors.RED)
         return False
     
     # Set password
     try:
-        passwd_proc = subprocess.Popen(['chpasswd'], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+        passwd_proc = subprocess.Popen(['/usr/sbin/chpasswd'], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
         stdout, stderr = passwd_proc.communicate(input=f"{username}:{password}")
         
         if passwd_proc.returncode != 0:

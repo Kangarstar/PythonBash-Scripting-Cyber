@@ -23,7 +23,7 @@ fi
 # Create log directory if it doesn't exist
 mkdir -p "$(dirname "$LOG_FILE")"
 
-ROCKYOU_DIR="/home/wordlists"
+ROCKYOU_DIR="/etc/scripts/wordlists"
 FILE="$ROCKYOU_DIR/rockyou.txt"
 URL="https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt"
 

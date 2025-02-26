@@ -1,12 +1,12 @@
 #!/bin/bash
 
-#root check
+# root check
 if [ "$(id -u)" != "0" ]; then
     echo "This script must be run as root"
     exit 1
 fi
 
-#format date
+# format date
 format_date() {
     date "+%d-%m-%Y_%H:%M:%S"
 }
@@ -14,8 +14,7 @@ format_date() {
 #Log file path
 LOG_FILE="/var/log/security/user_check.sh_$(format_date).log"
 
-
-#check log directyory exists
+# check log directyory exists
 mkdir -p "$(dirname "$LOG_FILE")"
 
 # prompt
@@ -23,22 +22,20 @@ echo "----------------------------------------"
 echo "Checking login status for all users..."
 echo "----------------------------------------"
 
-#logs
+# logs
 echo "=========================================" >> "$LOG_FILE"
 echo "====   Useless users status check    ====" >> "$LOG_FILE"
 echo "=========================================" >> "$LOG_FILE"
 
-
-
-#regular users count
+# regular users count
 user_count=0
 
 # Process all users
 while IFS=: read -r username password uid gid gecos home shell; do
     # Skip system users and nologin/false shells
     if [ "$uid" -ge 1000 ] 2>/dev/null && \
-       [ "$shell" != "/usr/sbin/nologin" ] && \
-       [ "$shell" != "/bin/false" ]; then
+        [ "$shell" != "/usr/sbin/nologin" ] && \
+        [ "$shell" != "/bin/false" ]; then
 
         ((user_count++))
 
@@ -77,5 +74,4 @@ echo "----------------------------------------"
 
 # Set appropriate permissions
 chmod 600 "$LOG_FILE"
-
 exit 0
