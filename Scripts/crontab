@@ -1,6 +1,6 @@
 0 2 * * * /home/scripts/securitycheck.sh
 0 2 * * * /home/scripts/networkscan.sh
-0 2 * * * /home/scripts/scanloggedusers.sh
+0 2 * * * /home/scripts/usercheck.sh
 30 8 * * * /home/scripts/securitycheck.py
 30 8 * * * /home/scripts/networkscan.py
-30 8 * * * /home/scripts/scanloggedusers.py
+30 8 * * * /home/scripts/usercheck.py

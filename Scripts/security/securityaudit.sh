@@ -19,7 +19,7 @@ format_date() {
 }
 
 # Log file path
-LOG_FILE="/home/log/security_check.sh_$(format_date).log"
+LOG_FILE="/var/log/security/security_check.sh_$(format_date).log"
 
 # check log directyory exists
 mkdir -p "$(dirname "$LOG_FILE")"

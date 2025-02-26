@@ -12,7 +12,7 @@ format_date() {
 }
 
 # Log file path
-LOG_FILE="/home/log/adduser_secure_$(format_date).log"
+LOG_FILE="/var/log/security/adduser_secure_$(format_date).log"
 
 # root check
 if [ "$(id -u)" != "0" ]; then

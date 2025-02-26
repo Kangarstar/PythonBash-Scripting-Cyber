@@ -18,7 +18,7 @@ class Colors:
 
 # Log file path and date
 timestamp = datetime.now().strftime("%d-%m-%Y_%H:%M:%S")
-LOG_DIR = "/home/log"
+LOG_DIR = "/var/log/security"
 LOG_FILE = f"{LOG_DIR}/adduser_secure_{timestamp}.log"
 ROCKYOU_DIR = "/home/wordlists"
 ROCKYOU_FILE = f"{ROCKYOU_DIR}/rockyou.txt"

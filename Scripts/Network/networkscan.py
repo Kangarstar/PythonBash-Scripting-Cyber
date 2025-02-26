@@ -16,7 +16,7 @@ class Colors:
     NC = '\033[0m'  # No Color
 
 # Log file path
-LOG_DIR = "/home/log"
+LOG_DIR = "/var/log/security"
 timestamp = datetime.now().strftime("%d-%m-%Y_%H:%M:%S")
 LOG_FILE = f"{LOG_DIR}/network_scan.py_{timestamp}.log"
 

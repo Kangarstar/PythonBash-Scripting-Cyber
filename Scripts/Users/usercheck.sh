@@ -12,7 +12,7 @@ format_date() {
 }
 
 #Log file path
-LOG_FILE="/home/log/user_check.sh_$(format_date).log"
+LOG_FILE="/var/log/security/user_check.sh_$(format_date).log"
 
 
 #check log directyory exists

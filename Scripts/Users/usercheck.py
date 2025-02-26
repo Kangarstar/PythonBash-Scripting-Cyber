@@ -14,7 +14,7 @@ if os.geteuid() != 0:
 
 # Log file path and date
 timestamp = datetime.now().strftime("%d-%m-%Y_%H:%M:%S")
-LOG_DIR = "/home/log"
+LOG_DIR = "/var/log/security"
 LOG_FILE = f"{LOG_DIR}/user_check.py_{timestamp}.log"
 
 # Check log directory exists
