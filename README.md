@@ -40,7 +40,6 @@ Pour installer et configurer le projet, suivez les étapes ci-dessous :
 
 # Installation des dépendances
 sudo apt update && sudo apt install -y git curl nmap
-sudo pip install requests
 
 # Clonage du dépôt
 sudo git clone git@github.com:Kangarstar/DigiTP7-Scripting-Cyber.git /etc/scripts
