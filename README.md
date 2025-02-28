@@ -20,7 +20,7 @@ DigiTP7-Scripting-Cyber
     ├── network/
     │   ├── networkscan.sh
     │   └── networkscan.py
-    ├── security/
+    ├── system/
     │   ├── securityaudit.sh
     │   └── securityaudit.py
     ├── users/
@@ -39,7 +39,7 @@ Pour installer et configurer le projet, suivez les étapes ci-dessous :
 ```bash
 
 # Installation des dépendances
-sudo apt update && sudo apt install -y git curl nmap
+sudo apt update && sudo apt install -y git curl nmap python3 python3-requests
 
 # Clonage du dépôt
 sudo git clone git@github.com:Kangarstar/DigiTP7-Scripting-Cyber.git /etc/scripts
@@ -58,4 +58,4 @@ sudo /etc/scripts/security/securityaudit.sh
 sudo /etc/scripts/scripts/network/networkscan.py
 ```
 
-**Tous les logs sont enregistrés dans le répertoire `/var/log/security/`.**
+## **Tous les logs sont enregistrés dans le répertoire `/var/log/security/`.**

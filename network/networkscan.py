@@ -62,7 +62,6 @@ def main():
             "title" : "=== Additional UDP Scan ===",
             "command" : f"nmap -sU -T4 {TARGET}"
         }
-
     ]
 
     # Run all checks
