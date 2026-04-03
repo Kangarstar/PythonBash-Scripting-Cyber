@@ -68,6 +68,8 @@ sudo /etc/scripts/scripts/network/networkscan.py
 git clone https://github.com/xyz/zipzod@latest
 cd zipzod
 ```
+### Motivation
+The motivation for this project was to see the difference between bash and python script syntax as well as their qwerks and execution time
 
 ### Build the compiled binary
 
@@ -84,3 +86,8 @@ go test ./...
 ### Submit a pull request
 
 If you'd like to contribute, please fork the repository and open a pull request to the `main` branch.
+
+### Quick start
+
+### Usage
+
