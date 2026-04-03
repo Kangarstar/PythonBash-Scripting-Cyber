@@ -1,3 +1,4 @@
+##
 DigiTP7-Scripting-Cyber
 
 This project is dedicated to enhancing Linux system security. It provides a comprehensive suite of Bash and Python scripts designed to detect and remediate network, system, and user-level vulnerabilities.
