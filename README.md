@@ -1,20 +1,31 @@
-# DigiTP7-Scripting-Cyber
+DigiTP7-Scripting-Cyber
 
-## Présentation du projet
+This project is dedicated to enhancing Linux system security. It provides a comprehensive suite of Bash and Python scripts designed to detect and remediate network, system, and user-level vulnerabilities.
+Motivation
 
-Ce projet est dédié à l'amélioration de la sécurité des systèmes Linux. Il propose un ensemble de scripts en Bash et Python pour détecter et corriger les vulnérabilités réseau, système et utilisateurs.
+The core objective of this project was to explore the functional differences between Bash and Python scripting. By implementing the same security tools in both languages, we can compare:
 
-## Fonctionnalités principales
+    Syntax complexity and readability.
 
-Le projet se compose de quatre catégories de scripts :
+    Language-specific quirks and library dependencies.
 
-- **Network** : Ces scripts scannent les ports ouverts et identifient les services potentiellement vulnérables sur le réseau.
-- **Sécurité** : Ils réalisent un audit de sécurité complet, vérifiant les connexions, les tentatives d'intrusion et les services défaillants.
-- **Users** : Ces scripts vérifient la présence d'utilisateurs superflus sur le serveur, améliorant ainsi la gestion des comptes.
-- **Password** : Ils permettent de créer des utilisateurs avec des mots de passe sécurisés, conformes aux recommandations de la CNIL et absents des listes de mots de passe compromis.
+    Execution performance and resource overhead.
 
-## Structure du projet
-```
+Features
+
+The project is organized into four critical security categories:
+
+    Network: Scans for open ports and identifies potentially vulnerable services exposed on the network.
+
+    Security: Performs comprehensive audits, monitoring active connections, intrusion attempts, and service failures.
+
+    Users: Scans for redundant or unauthorized user accounts to streamline server access management.
+
+    Password: Facilitates secure user creation with passwords that meet strict regulatory standards (CNIL) and are cross-referenced against compromised password lists.
+
+Project Structure
+Plaintext
+
 DigiTP7-Scripting-Cyber
 └── scripts/
     ├── network/
@@ -30,64 +41,67 @@ DigiTP7-Scripting-Cyber
     │   ├── addusersecure.sh
     │   └── addusersecure.py
     └── crontab
-```
 
-## Installation
+Quick Start
 
-Pour installer et configurer le projet, suivez les étapes ci-dessous :
+To set up the security suite on your local machine, run the following commands:
+1. Install Dependencies
+Bash
 
-```bash
-
-# Installation des dépendances
 sudo apt update && sudo apt install -y git curl nmap python3 python3-requests
 
-# Clonage du dépôt
+2. Clone the Repository
+Bash
+
 sudo git clone git@github.com:Kangarstar/DigiTP7-Scripting-Cyber.git /etc/scripts
 
-# Attribution des permissions
+3. Set Permissions & Automation
+Bash
+
+# Secure the directory
 sudo chmod -R 700 /etc/scripts
 
-# Installation du crontab pour l'exécution automatique
+# Install the crontab for scheduled execution
 crontab /etc/scripts/crontab
 
-```
-## Execution manuelle d'un script
-```bash
-sudo /etc/scripts/security/securityaudit.sh
-# ou
-sudo /etc/scripts/scripts/network/networkscan.py
-```
+Usage
+Manual Execution
 
-## **Tous les logs sont enregistrés dans le répertoire `/var/log/security/`.**
+You can run any script manually using sudo. For example:
 
-## 🤝 Contributing
+To run a Bash audit:
+Bash
 
-### Clone the repo
+sudo /etc/scripts/system/securityaudit.sh
 
-```bash
-git clone https://github.com/xyz/zipzod@latest
-cd zipzod
-```
-### Motivation
-The motivation for this project was to see the difference between bash and python script syntax as well as their qwerks and execution time
+To run a Python network scan:
+Bash
 
-### Build the compiled binary
+sudo python3 /etc/scripts/network/networkscan.py
 
-```bash
-go build
-```
+Logs
 
-### Run the test suite
+All execution results and security findings are logged in the following directory:
+ /var/log/security/
+Contributing
 
-```bash
-go test ./...
-```
+We welcome contributions! Please follow these steps to help improve the project:
 
-### Submit a pull request
+    Clone the Repo
+    Bash
 
-If you'd like to contribute, please fork the repository and open a pull request to the `main` branch.
+    git clone https://github.com/Kangarstar/DigiTP7-Scripting-Cyber.git
+    cd DigiTP7-Scripting-Cyber
 
-### Quick start
+    Build (If applicable)
+    Bash
 
-### Usage
+    go build
 
+    Run Tests
+    Bash
+
+    go test ./...
+
+    Submit a Pull Request
+    Fork the repository and open a pull request to the main branch.
